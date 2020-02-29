@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+<title> Web Programming2 - class - 6- DOM </title>
+<script src ="js\jquery-3.4.1.js"></script>
+<script src ="js\jquery-ui.js"></script>
+<link rel = "stylesheet" type = "text/css" href ="css\jquery-ui.css">
+     <script>
+	 $(document).ready(function(){
+	 $( function() {
+        $( "#accordion" ).accordion({
+      	collapsible: true,
+		heightStyle: "content"
+		});
+		 $( "#tabs" ).tabs({
+		 });
+		 $("#Dialog1").hide();
+		  $("#Dialog2").hide();
+		 $("#btnClick").click(function(){
+		   $("#Dialog1").dialog(
+		   {buttons: {
+        "OK": function({
+		}) {
+         $("#Dialog2").dialog({buttons: {
+        "Yes": function() {
+          $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }})
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+		   });
+		   });
+         }); 
+		  })
+  </script>
+</head>
+    <body >
+<div id="accordion">
+  <h3>Section 1</h3>
+  <div>
+   <div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Item 1</a></li>
+    <li><a href="#tabs-2">Item 2</a></li>
+  </ul>
+    <p>
+    <div id="tabs-1">
+       <input type = "button" id ="btnClick" value = "Click"/>
+	   <div id = "Dialog1" title = "My Dialog 1">
+	   <p> Hi this is a dialog box. Press ok to load more </p>
+	    </div>
+	   <div id = "Dialog2" title = "My Dialog 2">
+	   <p> Hi this is dialog 2 </p>
+	    </div> 
+     </div>
+  
+  
+  <div id="tabs-2">
+    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+  </div>
+    </p>
+  </div>
+  </div>
+
+  <h3>Section 2</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  <h3>Section 4</h3>
+  <div>
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div>
+</div>
+	
+	  
+</footer>
+  </body>
+</html>
